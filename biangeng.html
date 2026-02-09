@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>业务管理系统</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
+        .container { background: #fff; padding: 24px; border-radius: 4px; min-height: 800px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        
+        /* 标题样式 */
+        .page-title { font-size: 20px; font-weight: bold; border-bottom: 1px solid #e8e8e8; padding-bottom: 16px; margin-bottom: 24px; }
+        .section-title { font-size: 16px; font-weight: bold; margin: 32px 0 16px; display: flex; align-items: center; }
+        
+        /* 表单网格布局 */
+        .grid-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 20px; }
+        .form-item { display: flex; flex-direction: column; }
+        .form-item label { font-size: 14px; margin-bottom: 8px; color: #666; }
+        .form-item span { font-size: 14px; color: #333; } /* 用于展示工单信息 */
+        
+        /* 输入框样式 */
+        input[type="text"] { padding: 8px 12px; border: 1px solid #d9d9d9; border-radius: 4px; outline: none; transition: all 0.3s; }
+        input[readonly] { background-color: #f5f5f5; color: rgba(0, 0, 0, 0.25); cursor: not-allowed; }
+        input:focus:not([readonly]) { border-color: #40a9ff; box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2); }
+
+        /* 介绍2/3 组合输入框 */
+        .input-group { display: flex; align-items: center; }
+        .input-prefix { background: #f5f5f5; border: 1px solid #d9d9d9; padding: 8px 12px; border-right: none; border-radius: 4px 0 0 4px; font-size: 14px; color: #666; width: 60px; text-align: center; }
+        .input-separator { padding: 0 8px; color: #d9d9d9; }
+        .input-group input { border-radius: 0 4px 4px 0; flex: 1; }
+
+        /* 图片上传占位 */
+        .logo-placeholder { width: 80px; height: 80px; border: 1px dashed #d9d9d9; background: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 4px; }
+        .logo-placeholder img { width: 32px; opacity: 0.5; }
+        .hint { font-size: 12px; color: #999; margin-top: 4px; line-height: 1.5; }
+
+        /* 底部按钮 */
+        .footer-btns { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e8e8; text-align: center; }
+        .btn { padding: 8px 32px; font-size: 14px; border-radius: 4px; cursor: pointer; border: 1px solid #d9d9d9; margin: 0 8px; transition: all 0.3s; }
+        .btn-submit { background: #52c41a; color: #fff; border-color: #52c41a; }
+        .btn-submit:hover { background: #73d13d; }
+        .btn-back { background: #fff; color: #666; }
+
+        /* 提交成功页面 */
+        #success-view { display: none; text-align: center; padding: 100px 0; }
+        .success-icon { font-size: 72px; color: #52c41a; margin-bottom: 24px; }
+        .success-title { font-size: 24px; font-weight: bold; margin-bottom: 16px; }
+        .success-desc { color: #8c8c8c; margin-bottom: 40px; }
+        .btn-back-link {
+    display: inline-block;        /* 让链接可以设置宽高 */
+    margin-top: 20px;
+    padding: 8px 24px;
+    font-size: 14px;
+    color: #666;                  /* 深灰色文字 */
+    text-decoration: none;        /* 去掉下划线 */
+    background-color: #fff;       /* 白色背景 */
+    border: 1px solid #d9d9d9;    /* 浅灰色边框 */
+    border-radius: 4px;           /* 圆角 */
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-back-link:hover {
+    color: #409eff;               /* 悬停时变蓝色 */
+    border-color: #409eff;        /* 悬停时边框变蓝 */
+    background-color: #f5f7fa;    /* 悬停时背景微变 */
+}
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <div id="edit-view">
+        <div class="page-title">变更业务</div>
+
+        <div class="section-title">创建业务工单信息</div>
+        <div class="grid-row">
+            <div class="form-item"><label>申请流程：</label><span>创建业务流程</span></div>
+            <div class="form-item"><label>申请工单号：</label><span>CREATE_BUSSINESS_202407267807</span></div>
+            <div class="form-item"><label>申请人：</label><span>超管</span></div>
+            <div class="form-item"><label>申请人电话：</label><span>13500000000</span></div>
+            <div class="form-item"><label>业务归属：</label><span>集团公司</span></div>
+        </div>
+
+        <div class="section-title">业务基本信息</div>
+        <div class="grid-row">
+            <div class="form-item">
+                <label>业务APPID:</label>
+                <input type="text" value="yingyong01" readonly>
+            </div>
+            <div class="form-item">
+                <label>业务ID:</label>
+                <input type="text" value="yewu01" readonly>
+            </div>
+            <div class="form-item">
+                <label>业务名称:</label>
+                <input type="text" value="趣味通话" readonly>
+            </div>
+            <div class="form-item">
+                <label>关联应用APPID:</label>
+                <input type="text" value="yingyong01" readonly>
+            </div>
+            <div class="form-item">
+                <label>关联应用名称:</label>
+                <input type="text" value="关联" readonly>
+            </div>
+        </div>
+
+        <div class="section-title">业务详细信息</div>
+        <div class="grid-row">
+            <div class="form-item">
+                <label>业务版本号:</label>
+                <input type="text" value="1.0.0">
+                <div class="hint">支持X.X.X格式填写版本号，最小0.0.0</div>
+            </div>
+            <div class="form-item">
+                <label>业务LOGO:</label>
+                <div class="logo-placeholder">
+                    <img src="data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zM154 836l180-300 160 200 210-250 166 350H154z' fill='%23bfbfbf'/%3E%3C/svg%3E">
+                </div>
+                <div class="hint">支持扩展名：png、ico<br>尺寸：44*44<br>大小：不大于128kb</div>
+            </div>
+            <div class="form-item">
+                <label>业务介绍1:</label>
+                <input type="text" value="介绍1">
+            </div>
+        </div>
+
+        <div class="grid-row">
+            <div class="form-item">
+                <label>业务介绍2:</label>
+                <div class="input-group">
+                    <div class="input-prefix">介绍2</div>
+                    <span class="input-separator">-</span>
+                    <input type="text" placeholder="请输入">
+                </div>
+            </div>
+            <div class="form-item">
+                <label>业务介绍3:</label>
+                <div class="input-group">
+                    <div class="input-prefix">介绍3</div>
+                    <span class="input-separator">-</span>
+                    <input type="text" placeholder="请输入">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-btns">
+            <button class="btn btn-submit" onclick="handleSubmit()">提交</button>
+        </div>
+    </div>
+
+  <div id="success-view">
+    <div class="success-icon">✔</div>
+    <div class="success-title">提交成功</div>
+    <div class="success-desc">您的业务变更申请已提交，请耐心等待管理员审核。</div>
+    
+    <a href="index.html#business" class="btn-back-link">返回列表</a>
+</div>
+</div>
+
+<script>
+    function handleSubmit() {
+        // 隐藏编辑页，显示成功页
+        document.getElementById('edit-view').style.display = 'none';
+        document.getElementById('success-view').style.display = 'block';
+    }
+
+    function resetPage() {
+        // 返回初始状态
+        document.getElementById('edit-view').style.display = 'block';
+        document.getElementById('success-view').style.display = 'none';
+    }
+    // 页面加载时检查 URL 锚点
+window.addEventListener('DOMContentLoaded', (event) => {
+    // 获取 URL 中的锚点（例如 #business）
+    const hash = window.location.hash;
+    
+    if (hash === '#business') {
+        // 模拟点击“业务管理”菜单
+        // 找到你的菜单项，通常类名是 .menu-item，文本包含“业务管理”
+        const menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(item => {
+            if (item.textContent.includes('业务管理')) {
+                item.click(); // 触发你原本写好的切换页面逻辑
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

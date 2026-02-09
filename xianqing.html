@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>业务详情页 - 只读</title>
+    <style>
+        /* 基础样式复位 */
+        * { box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", -apple-system, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 卡片容器 */
+        .card {
+            background: #fff;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 模块标题 */
+        section h3 {
+            font-size: 16px;
+            margin: 25px 0 15px 0;
+            color: #303133;
+            display: flex;
+            align-items: center;
+        }
+        section h3::before {
+            content: "";
+            width: 4px;
+            height: 16px;
+            background: #409eff;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        /* 布局网格系统 */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .col-3 {
+            flex: 0 0 33.33%; /* 三列布局 */
+            padding-right: 20px;
+            margin-bottom: 15px;
+        }
+        .col-6 {
+            flex: 0 0 66.66%;
+            padding-right: 20px;
+        }
+
+        /* 表单元素样式 */
+        .form-item { margin-bottom: 15px; }
+        .form-item label {
+            display: block;
+            font-size: 14px;
+            color: #606266;
+            margin-bottom: 8px;
+        }
+        .form-item input {
+            width: 260px;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 12px;
+            background-color: #f5f7fa; /* 灰色背景表示不可改 */
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            color: #909399;
+            cursor: not-allowed;
+            outline: none;
+        }
+
+        /* 辅助文字 */
+        .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* LOGO 占位符样式 */
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #dcdfe6;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #c0c4cc;
+        }
+
+        /* 业务介绍特殊组合 (Input - Input) */
+        .intro-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-group .sep { color: #dcdfe6; }
+
+        /* 分割线 */
+        .divider {
+            height: 1px;
+            background: #ebeef5;
+            margin: 20px 0;
+        }
+
+        /* 底部按钮区域 */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        .btn-back {
+            padding: 10px 35px;
+            font-size: 14px;
+            background-color: #fff;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            color: #606266;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-back:hover {
+            color: #409eff;
+            border-color: #c6e2ff;
+            background-color: #ecf5ff;
+        }
+        .business-form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header-title">业务详情展示</div>
+
+    <section>
+        <h3>创建业务工单信息</h3>
+        <div class="row">
+            <div class<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>业务详情页 - 只读</title>
+    <style>
+        /* 基础样式复位 */
+        * { box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", -apple-system, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 卡片容器 */
+        .card {
+            background: #fff;
+            border-radius: 4px;
+            border: 1px solid #ebeef5;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 模块标题 */
+        section h3 {
+            font-size: 16px;
+            margin: 25px 0 15px 0;
+            color: #303133;
+            display: flex;
+            align-items: center;
+        }
+        section h3::before {
+            content: "";
+            width: 4px;
+            height: 16px;
+            background: #409eff;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        /* 布局网格系统 */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .col-3 {
+            flex: 0 0 33.33%; /* 三列布局 */
+            padding-right: 20px;
+            margin-bottom: 15px;
+        }
+        .col-6 {
+            flex: 0 0 66.66%;
+            padding-right: 20px;
+        }
+
+        /* 表单元素样式 */
+        .form-item { margin-bottom: 15px; }
+        .form-item label {
+            display: block;
+            font-size: 14px;
+            color: #606266;
+            margin-bottom: 8px;
+        }
+        .form-item input {
+            width: 260px;
+            height: 36px;
+            line-height: 36px;
+            padding: 0 12px;
+            background-color: #f5f7fa; /* 灰色背景表示不可改 */
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            color: #909399;
+            cursor: not-allowed;
+            outline: none;
+        }
+
+        /* 辅助文字 */
+        .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* LOGO 占位符样式 */
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #dcdfe6;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #c0c4cc;
+        }
+
+        /* 业务介绍特殊组合 (Input - Input) */
+        .intro-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-group .sep { color: #dcdfe6; }
+
+        /* 分割线 */
+        .divider {
+            height: 1px;
+            background: #ebeef5;
+            margin: 20px 0;
+        }
+
+        /* 底部按钮区域 */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        .btn-back {
+            padding: 10px 35px;
+            font-size: 14px;
+            background-color: #fff;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            color: #606266;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-back:hover {
+            color: #409eff;
+            border-color: #c6e2ff;
+            background-color: #ecf5ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header-title">业务详情展示</div>
+
+    <section>
+        <h3>创建业务工单信息</h3>
+        <div class="row">
+            <div class="col-3">申请流程：创建业务流程</div>
+            <div class="col-3">申请工单号：CREATE_BUSSINESS_202407267807</div>
+            <div class="col-3">申请人：超管</div>
+        </div>
+        <div class="row">
+            <div class="col-3">申请人电话：13500000000</div>
+            <div class="col-3">业务归属：集团公司</div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+        <h3>业务基本信息</h3>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-item">
+                    <label>业务APPID:</label>
+                    <input type="text" value="yingyong01" readonly>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-item">
+                    <label>业务ID:</label>
+                    <input type="text" value="yewu01" readonly>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-item">
+                    <label>业务名称:</label>
+                    <input type="text" value="趣味通话" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-item">
+                    <label>关联应用APPID:</label>
+                    <input type="text" value="yingyong01" readonly>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-item">
+                    <label>关联应用名称:</label>
+                    <input type="text" value="关联" readonly>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+        <h3>业务详细信息</h3>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-item">
+                    <label>业务版本号:</label>
+                    <input type="text" value="1.0.0" readonly>
+                    <p class="hint">支持X.X.X格式填写版本号，最小0.0.0</p>
+                </div>
+            </div>
+            </div>
+            <div class="col-3">
+                <div class="form-item">
+                    <label>业务介绍1:</label>
+                    <input type="text" value="介绍内容" readonly>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <button type="button" class="btn-back" id="btnBack">返回</button>
+    </footer>
+</div>
+
+<script>
+    // JS 逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const backBtn = document.getElementById('btnBack');
+        
+        backBtn.onclick = function() {
+            // 尝试返回上一页
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // 如果没有历史记录，则弹窗提示或跳转
+                alert('返回上一级页面');
+            }
+        };
+    });
+    function showBusinessDetail() {
+  // 隐藏列表
+  document.querySelector('.table-box').style.display = 'none';
+  document.querySelector('.search-bar').style.display = 'none';
+
+  // 显示详情页
+  document.getElementById('business-detail').style.display = 'block';
+}
+function backToBusinessListFromDetail() {
+  // 隐藏详情页
+  document.getElementById('business-detail').style.display = 'none';
+
+  // 显示列表
+  document.querySelector('.table-box').style.display = 'block';
+  document.querySelector('.search-bar').style.display = 'block';
+}
+
+</script>
+
+</body>
+</html>
+                
+                
